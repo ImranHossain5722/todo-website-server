@@ -60,3 +60,7 @@ app.get('/', (req, res) => {
   res.send('todo web is runing')
 })
 
+app.get('/hero', (req, res) => {
+  res.send('todo web is runing')
+})
+
