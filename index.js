@@ -59,8 +59,3 @@ run().catch(console.dir)
 app.get('/', (req, res) => {
   res.send('Hello todo user')
 })
-
-app.listen(port,()=>{
-
-    console.log(`todo app running pn port ${port}`)
-})
