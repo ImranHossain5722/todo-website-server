@@ -1,7 +1,7 @@
 const express = require('express')
 
 const cors = require( 'cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config();
 const app = express()
 const port = process.env.PORT || 5000
@@ -29,6 +29,15 @@ async function run () {
         res.send(todoList)
 
      })
+
+     // 1 single todo 
+     app.get("/todos/:id", async (req, res) => {
+        const id = req.params.id;
+        const query = { _id: ObjectId(id) };
+        const singleToDo = await toDoCollection.findOne(query);
+        res.send(singleToDo);
+      });
+  
 
      //todos add
      app.post("/todos", async (req, res)=> {
