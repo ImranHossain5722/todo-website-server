@@ -59,3 +59,6 @@ run().catch(console.dir)
 app.get('/', (req, res) => {
   res.send('todo web is runing')
 })
+app.get('/hero', (req, res) => {
+  res.send('I am Hero')
+})
